@@ -1,0 +1,48 @@
+{
+    "name": "eslint-rules-zh-plugin",
+    "displayName": "ESLint Chinese Rules",
+    "description": "eslint中文规则提示插件",
+    "version": "0.0.3",
+    "publisher": "maggie",
+    "author": {
+        "name": "maggie"
+    },
+    "keywords": [
+        "eslint",
+        "rules",
+        "chinese",
+        "zh"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/maggie-chen/eslint-rules-zh-plugin.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maggie-chen/eslint-rules-zh-plugin/issues",
+        "email": "maggie_jsj@163.com"
+    },
+    "homepage": "https://github.com/maggie-chen/eslint-rules-zh-plugin/master/README.md",
+    "license": "MIT",
+    "icon": "assets/icon.png",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:vue"
+    ],
+    "main": "./src/extension.js",
+    "extensionPack": [
+        "dbaeumer.vscode-eslint"
+    ],
+    "scripts": {},
+    "devDependencies": {
+        "@types/vscode": "^1.50.0",
+        "eslint": "^7.9.0"
+    }
+}
