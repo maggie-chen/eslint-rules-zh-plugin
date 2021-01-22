@@ -1,17 +1,13 @@
 # ESLint Chinese Rules
 
-一个小小的ESLint辅助提示插件，帮助更便捷的查询规则，理解规则。
+ESLint规则辅助提示插件，帮助更便捷的查询引用的规则，理解规则。
 （插件还在不断完善中，欢迎指点）
-
 
 ## Features
 快速便捷查询ESLint规则
 
 ## Usage
-鼠标悬停在ESLint提示错误的地方，打开惊喜小提示。
-
-## Release Notes
-* v1.0 基础版，实现鼠标悬停提示规则
+鼠标悬停在ESLint诊断错误的地方，打开惊喜小提示，点击蓝色提示，方便的跳转文档地址。
 
 ## Requirements
 * ESLint

@@ -1,9 +1,12 @@
 # Change Log
 
-All notable changes to the "eslint-rules-zh-plugin" extension pack will be documented in this file.
+## [0.1.0](https://marketplace.visualstudio.com/items?itemName=maggie.eslint-rules-zh-plugin) (2021-01-22)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Bug Fixes
 
-## [Unreleased]
 
-- Initial release
+### Features
+* 实现鼠标悬停显示规则提示
+* 兼容eslint-plugin-vue中规则
+
+

@@ -2,7 +2,7 @@
     "name": "eslint-rules-zh-plugin",
     "displayName": "ESLint Chinese Rules",
     "description": "eslint中文规则提示插件",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "publisher": "maggie",
     "author": {
         "name": "maggie"
