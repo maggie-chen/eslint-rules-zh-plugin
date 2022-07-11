@@ -1,6 +1,6 @@
 const vscode = require('vscode');
-const eslintRules = require('../api');
-
+const eslintRules = require('../rules');
+const RULE_URL = require('./const/rule-urls');
 
 function provideHover(document, position) {
     const diagnostics = vscode.languages
@@ -17,19 +17,24 @@ function provideHover(document, position) {
             return false;
         });
     if (diagnostics && diagnostics.length > 0) {
-        if (typeof diagnostics[0].code === 'object') {
-            const ruleId = String(diagnostics[0].code.value);
-            const rule = eslintRules[ruleId];
-            let url = 'https://eslint.bootcss.com/docs/rules/' + ruleId;
-            if (/vue/.test(ruleId)) { // eslint-plugin-vue 规则
-                url = 'https://eslint.vuejs.org/rules/' + ruleId.replace('vue/', '');
+        const contents = diagnostics.map((diagnostic) => {
+            if (typeof diagnostic.code === 'object') {
+                const ruleId = String(diagnostic.code.value);
+                const rule = eslintRules[ruleId];
+                let url = RULE_URL.BASE + ruleId;
+                if (/vue/.test(ruleId)) { // eslint-plugin-vue 规则
+                    url = RULE_URL.VUE + ruleId.replace('vue/', '');
+                } else if (/react/.test(ruleId)) { // eslint-plugin-react 规则
+                    url = RULE_URL.REACT + ruleId.replace('react/', '') + '.md';
+                }
+                return new vscode.MarkdownString('$(lightbulb) [ESLint提示：' + rule.zh + '](' + url + ') ', true)
+            } else {
+                return null;
             }
-            return {
-                contents: [new vscode.MarkdownString('$(lightbulb) [ESLint规则：' + rule.zh + '](' + url + ') ', true)]
-            };
-        } else {
-            return;
-        }
+        }).filter(diagnostic => !!diagnostic)
+        return contents.length ? {
+            contents
+        } : null
     }
     return;
 }
@@ -38,7 +43,7 @@ function provideHover(document, position) {
 function activate(context) {
 
     const selector = [];
-    for (const language of ['javascript', 'javascriptreact', 'vue']) {
+    for (const language of ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue']) {
         selector.push({ language, scheme: 'file' });
         selector.push({ language, scheme: 'untitled' });
     }
