@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.1](https://marketplace.visualstudio.com/items?itemName=maggie.eslint-rules-zh-plugin) (2022-07-15)
+### Features
+* 增加typescript-eslint中文规则
+
 ## [0.2.0](https://marketplace.visualstudio.com/items?itemName=maggie.eslint-rules-zh-plugin) (2022-07-11)
 ### Features
 * 增加eslint-plugin-react中文规则

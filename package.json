@@ -2,7 +2,7 @@
     "name": "eslint-rules-zh-plugin",
     "displayName": "ESLint Chinese Rules",
     "description": "eslint中文规则提示插件",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "publisher": "maggie",
     "author": {
         "name": "maggie"
@@ -21,7 +21,7 @@
         "url": "https://github.com/maggie-chen/eslint-rules-zh-plugin/issues",
         "email": "maggie_jsj@163.com"
     },
-    "homepage": "https://github.com/maggie-chen/eslint-rules-zh-plugin/master/README.md",
+    "homepage": "https://github.com/maggie-chen/eslint-rules-zh-plugin/blob/master/README.md",
     "license": "MIT",
     "icon": "assets/icon.png",
     "engines": {
